@@ -44,9 +44,6 @@ form1.addEventListener("keyup", function (e) {
 
         del.textContent ="X";
 
-        
-
-
         del.addEventListener("click", event =>
         {
               task.remove();
