@@ -2,7 +2,9 @@ const form1 = document.getElementById("form1");
 
 const rows =document.getElementById("rows");
 
-let itemsleft = document.querySelector("#itemsleft");
+let itemsLeft = document.querySelector("#itemsLeft");
+
+
 
 
 let counter = -1;
@@ -50,25 +52,21 @@ form1.addEventListener("keyup", function (e) {
               numremoved++;
         });
 
+       // let sum = document.createElement("span");
         
-        check.addEventListener("click", event =>
+       check.addEventListener("click", event =>
         {
             
             checkcounter++;
-            let sum = document.createElement("span");
-            sum.textContent = " " + ((counter + 1)-numremoved-checkcounter);
-            itemsleft.appendChild(sum);
+           // let sum = document.createElement("span");
+          //  sum.textContent = " " + ((counter + 1)-numremoved-checkcounter);
+           // itemsleft.appendChild(sum);
+            itemsLeft.textContent = (counter +1 ) - (checkcounter+ numremoved)
 
         })
+        itemsLeft.textContent ++;
     }
 
 });
 
-
-/*
-var thebuttons = document.querySelectorAll('.delbutton');
-
-thebuttons.forEach((b)=>{
-  b.addEventListener('click',(e)=>{prompt(this.id)},false);
-});
-*/
+ 
