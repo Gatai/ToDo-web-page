@@ -18,8 +18,6 @@ form1.addEventListener("keyup", function (e) {
         text.textContent = form1.value;
         check.type = "checkbox";
 
-        text.for = "task";
-
         rows.appendChild(task);
 
         task.appendChild(check);
