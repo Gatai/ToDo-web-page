@@ -7,7 +7,7 @@ let itemsLeft = document.querySelector("#itemsLeft");
 
 
 
-let counter = -1;
+let idCounter = -1;
 let checkcounter = 0;
 let numremoved = 0;
 let checkedCounter = 0;
@@ -19,11 +19,11 @@ form1.addEventListener("keyup", function (e) {
 
     if (e.keyCode == 13) {
 
-        counter++;
+        idCounter++;
 
         const task = document.createElement("li");
         
-        task.id = counter;
+        task.id = idCounter;
 
         const check = document.createElement("input");
 
@@ -31,7 +31,7 @@ form1.addEventListener("keyup", function (e) {
 
         const del  = document.createElement("button");
 
-        del.id = counter;
+        del.id = idCounter;
         del.classList.add("delbutton");
 
        
