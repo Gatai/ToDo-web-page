@@ -12,8 +12,9 @@ x = klar
     [x]Ta bort alla färdiga föremål ("Clear completed").
     [x]Visa upp antingen alla föremål ("All"), alla ofärdiga föremål ("Active") 
     [x]eller alla färdiga föremål ("Completed").
+    [x] Markera alla föremål som färdiga/ofärdiga.
     
-    [ ] Markera alla föremål som färdiga/ofärdiga.
+    [ ] itemsleft noll ställs inte när man klickar på reset knappen vid input.
     [ ] Utseende som exampel, css, GUI beteende, ikoner, effekter
     [ ] Responsive
     [ ] Testa alla funtioner
