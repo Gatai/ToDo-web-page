@@ -151,12 +151,12 @@ form1.addEventListener("keyup", function (e) {
                
                  let liList = Array.from(document.querySelectorAll("li"));
                   
-                             liList.forEach(function(a)
-                             {
-                                a.style.display = "";
+                    liList.forEach(function(a)
+                    {
+                    a.style.display = "";
 
-                             });
-                 });
+                    });
+            });
 
 
      clearComleted.addEventListener("click", event =>{
@@ -173,9 +173,7 @@ form1.addEventListener("keyup", function (e) {
                          })
                      };
                  });
-
-
-     })
+    })
 
 
 
