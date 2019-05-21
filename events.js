@@ -10,6 +10,10 @@ let itemsLeft = document.querySelector("#itemsLeft");
 let counter = -1;
 let checkcounter = 0;
 let numremoved = 0;
+let checkedCounter = 0;
+//let checkedCounter2 =0;
+
+
 
 form1.addEventListener("keyup", function (e) {
 
@@ -30,12 +34,13 @@ form1.addEventListener("keyup", function (e) {
         del.id = counter;
         del.classList.add("delbutton");
 
-       // const del  = document.createElement("img");
+       
         text.textContent = form1.value;
+        
         check.type = "checkbox";
+        check.classList.add("checkBox");
 
-       // text.for = "task";
-
+       
         rows.appendChild(task);
 
         task.appendChild(check);
@@ -52,21 +57,55 @@ form1.addEventListener("keyup", function (e) {
               numremoved++;
         });
 
-       // let sum = document.createElement("span");
+
+
+        let checkList = Array.from(document.querySelectorAll(".checkBox"));
+
+        checkList.forEach(function(i) {
+       
+         if (i.checked == 1){
+                    checkedCounter ++;
+                            };
+
+                 itemsLeft.textContent = checkList.length - checkedCounter;
+                 
+                 
+                         });
+      
+                         checkedCounter = 0;
+         
         
-       check.addEventListener("click", event =>
+        check.addEventListener("click", event => 
         {
             
-            checkcounter++;
-           // let sum = document.createElement("span");
-          //  sum.textContent = " " + ((counter + 1)-numremoved-checkcounter);
-           // itemsleft.appendChild(sum);
-            itemsLeft.textContent = (counter +1 ) - (checkcounter+ numremoved)
+            checkList.forEach(function(i) {
+       
+                if (i.checked == 1){
+                          
+                  checkedCounter ++;
 
-        })
-        itemsLeft.textContent ++;
-    }
+                 };
+       
+                itemsLeft.textContent = checkList.length - checkedCounter; 
+                        
+                        
+                });
+       
+                                
+         checkedCounter =0;   
 
+        });
+        //checkedCounter2 =0;
+
+       
+        
+    
+        }
 });
+
+
+    
+    
+
 
  
