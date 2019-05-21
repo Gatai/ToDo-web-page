@@ -107,14 +107,25 @@ form1.addEventListener("keyup", function (e) {
 
         });
        
+
+       let n = 2;
        resetButton.addEventListener("click", event => {
        let checkList4 = Array.from(document.querySelectorAll(".checkBox"));
-      
+     
+       
        checkList4.forEach(function(i) {
-         
-                  i.checked = 1;
+            if(n%2==0) {
+                i.checked = 1;
+              //  itemsLeft.textContent = 0;
+            }
+            else {
+                i.checked = 0;
+            }
+                 
             });
-            itemsLeft.textContent = 0;
+          n++;
+        
+           // itemsLeft.textContent = 0; 
        })
 
        activeButton.addEventListener("click", event => {

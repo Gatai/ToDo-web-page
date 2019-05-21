@@ -5,13 +5,13 @@ Er applikation ska bete sig som exemplet på TodoMVC-hemsidan, inklusive följan
 
 x = klar
 
-    [x]  Lägga till föremål.
+    [x] Lägga till föremål.
     [X] Ta bort föremål.
     [x] Markera föremål som färdiga.
-    [x]Se hur många ofärdiga föremål som återstår ("X items left").
-    [x]Ta bort alla färdiga föremål ("Clear completed").
-    [x]Visa upp antingen alla föremål ("All"), alla ofärdiga föremål ("Active") 
-    [x]eller alla färdiga föremål ("Completed").
+    [x] Se hur många ofärdiga föremål som återstår ("X items left").
+    [x] Ta bort alla färdiga föremål ("Clear completed").
+    [x] Visa upp antingen alla föremål ("All"), alla ofärdiga föremål ("Active") 
+    [x] eller alla färdiga föremål ("Completed").
     
     [ ] Markera alla föremål som färdiga/ofärdiga.
     [ ] Utseende som exampel, css, GUI beteende, ikoner, effekter
