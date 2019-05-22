@@ -13,11 +13,12 @@ x = klar
     [x]Visa upp antingen alla föremål ("All"), alla ofärdiga föremål ("Active") 
     [x]eller alla färdiga föremål ("Completed").
     [x] Markera alla föremål som färdiga/ofärdiga.
-    
     [x] itemsleft noll ställs inte när man klickar på reset knappen vid input.
+
+
+    [ ] Testa alla funtioner
     [ ] Utseende som exampel, css, GUI beteende, ikoner, effekter
     [ ] Responsive
-    [ ] Testa alla funtioner
 
 Den nedan gör så att användarens input försvinner. och att man kan skriva något annat därefter.
     ******************************
