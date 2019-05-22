@@ -13,6 +13,7 @@ let numremoved = 0;
 let checkedCounter = 0;
 let checkedCounter2 = 0;
 let checkedCounter3 = 0;
+let checkedCounter4 = 0;
 
 form1.addEventListener("keyup", function (e) {
 
@@ -48,27 +49,33 @@ form1.addEventListener("keyup", function (e) {
 
         del.textContent ="X";
 
+        
+
+
+
         del.addEventListener("click", event =>
         {
-              task.remove();
-              numremoved++;
-              
-              let checkList3 = Array.from(document.querySelectorAll(".checkBox"));
-
             
-            checkList3.forEach(function(i) {
-       
-                if (i.checked == 1){
-                          
-                  checkedCounter3++;
+            task.remove();
+            numremoved++;
+            
+            let checkList3 = Array.from(document.querySelectorAll(".checkBox"));
+            
+            if (checkList3.length == 0){
+                itemsLeft.textContent  = 0;
+            }
 
-                 };
-       
-                itemsLeft.textContent = checkList3.length - checkedCounter3; 
+            checkList3.forEach(function(i) {
                 
-                });
-                                
-         checkedCounter3 =0;   
+                if (i.checked == 1){
+                    
+                    checkedCounter3++;
+                    
+                }; 
+                itemsLeft.textContent = checkList3.length  - checkedCounter3; 
+            });
+            
+            checkedCounter3 =0;   
 
         });
 
@@ -104,9 +111,22 @@ form1.addEventListener("keyup", function (e) {
                 });
                                 
          checkedCounter2 =0;   
+                /* skapar en klass som heter completed till alla li element som har CheckBoxes som är checked */
+         let allTasks = Array.from(document.querySelectorAll("li"));
+        let allCheckBoxes = Array.from(document.querySelectorAll(".checkBox"));
+        allTasks.forEach(function(a) {
+                
+            allCheckBoxes.forEach(function(i){
+                    if (i.checked == 1 && (a.id == i.id)){
+                        a.classList.add("comleted");
+                    }
+                    })
+                
+            });
+            
 
-        });
-       
+         });
+         
 
        let n = 2;
        resetButton.addEventListener("click", event => {
@@ -125,38 +145,58 @@ form1.addEventListener("keyup", function (e) {
             });
           n++;
         
-           // itemsLeft.textContent = 0; 
+          let checkList8 = Array.from(document.querySelectorAll(".checkBox"));            
+          checkList8.forEach(function(i) {
+     
+              if (i.checked == 1){
+                        
+                checkedCounter4++;
+
+               };
+     
+              itemsLeft.textContent = checkList8.length - checkedCounter4; 
+                      
+              });
+              checkedCounter4 = 0;
        })
 
        activeButton.addEventListener("click", event => {
-       let checkList5 = Array.from(document.querySelectorAll(".checkBox"));
+        
         let liList = Array.from(document.querySelectorAll("li"));
-            checkList5.forEach(function(i) {
-                if (i.checked == 1){
-                    liList.forEach(function(a)
-                    {
-                    if (a.id == i.id){
-                        a.style.display = "none";
-                    }
-                    })
-                };
+                  
+            liList.forEach(function(a)
+            {
+                if(a.className =="comleted") {
+                     a.style.display = "none";
+                }
+                else 
+                {
+                    a.style.display ="";
+                }
+           
+
             });
+
+            
         });
 
-        completedButton.addEventListener("click", event => {
-            let checkList6 = Array.from(document.querySelectorAll(".checkBox"));
-             let liList = Array.from(document.querySelectorAll("li"));
-                 checkList6.forEach(function(i) {
-                     if (i.checked == 0){
-                         liList.forEach(function(a)
-                         {
-                         if (a.id == i.id){
-                             a.style.display = "none";
-                         }
-                         })
-                     };
-                 });
-             });
+        completedButton.addEventListener("click", event =>{
+            let liList = Array.from(document.querySelectorAll("li"));
+                  
+            liList.forEach(function(a)
+            {
+                if(a.className !="comleted") {
+                     a.style.display = "none";
+                }
+                else
+                {
+                    a.style.display ="";
+                }
+
+            });
+
+
+        });
 
              allButton.addEventListener("click", event => {
                

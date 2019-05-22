@@ -14,7 +14,7 @@ x = klar
     [x]eller alla färdiga föremål ("Completed").
     [x] Markera alla föremål som färdiga/ofärdiga.
     
-    [ ] itemsleft noll ställs inte när man klickar på reset knappen vid input.
+    [x] itemsleft noll ställs inte när man klickar på reset knappen vid input.
     [ ] Utseende som exampel, css, GUI beteende, ikoner, effekter
     [ ] Responsive
     [ ] Testa alla funtioner
