@@ -28,9 +28,13 @@ form1.addEventListener("keyup", function (e) {
 
         const text = document.createElement("label");
         const del  = document.createElement("button");
-
         del.id = idCounter;
         del.classList.add("delbutton");
+        //const imageDelButton = document.createElement("img");
+        //imageDelButton.src = "cross.svg";
+        //del.appendChild(imageDelButton);
+
+        text.textContent = form1.value;
         
         check.type = "checkbox";
         check.classList.add("checkBox");
