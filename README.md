@@ -19,6 +19,13 @@ x = klar
     [ ] Responsive
     [ ] Testa alla funtioner
 
+Den nedan gör så att användarens input försvinner. och att man kan skriva något annat därefter.
+    ******************************
+    <form autocomplete="off">
+        <input type="text" id="form1" placeholder="What need to be done?">
+    </form>    
+    ******************************
+
 De enda undantagen till detta är den funktionalitet som beskrivs nedan under kraven för väl godkänt, och som alltså bara behöver implementeras om ni vill kunna få betyget VG.
 
 Ni ska inte lägga till egen funktionalitet som inte finns i exemplet.
