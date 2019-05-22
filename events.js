@@ -80,7 +80,7 @@ form1.addEventListener("keyup", function (e) {
                  itemsLeft.textContent = checkList.length - checkedCounter;
         });
                 //kan kanske ta bort men har testat och det gör ingen skillnad i programmet.
-              /* checkedCounter = 0; */
+              checkedCounter = 0; 
         
         check.addEventListener("click", event => 
         {
@@ -100,7 +100,6 @@ form1.addEventListener("keyup", function (e) {
                     /* skapar en klass som heter completed till alla li element som har CheckBoxes som är checked */
             let allTasks = Array.from(document.querySelectorAll("li"));
             let allCheckBoxes = Array.from(document.querySelectorAll(".checkBox"));
-           
             allTasks.forEach(function(a) {
                 allCheckBoxes.forEach(function(i){
                     if (i.checked == 1 && (a.id == i.id)){
@@ -111,37 +110,63 @@ form1.addEventListener("keyup", function (e) {
          });
          
 
+
+
+
+
+
        let n = 2;
        resetButton.addEventListener("click", event => {
        let checkList4 = Array.from(document.querySelectorAll(".checkBox"));
-     
-       
-       checkList4.forEach(function(i) {
-            if(n%2==0) {
-                i.checked = 1;
-              //  itemsLeft.textContent = 0;
-            }
-            else {
-                i.checked = 0;
-            }
-                 
-            });
-          n++;
+       //let allTasks = Array.from(document.querySelectorAll("li"));
         
-          let checkList8 = Array.from(document.querySelectorAll(".checkBox"));            
-          checkList8.forEach(function(i) {
-     
-              if (i.checked == 1){
-                        
-                checkedCounter4++;
+            checkList4.forEach(function(i) {
+                if(n%2==0) {
+                    i.checked = 1;
+                //  itemsLeft.textContent = 0;
+                     
+                    
+                }
+                else {
+                    i.checked = 0;
+                   
+                }
+            });
+            n++;
 
-               };
-     
-              itemsLeft.textContent = checkList8.length - checkedCounter4; 
-                      
-              });
-              checkedCounter4 = 0;
-       })
+           
+
+            /* check.addEventListener("click", event =>{
+                
+            
+            }); */
+            
+            
+            let checkList8 = Array.from(document.querySelectorAll(".checkBox"));            
+            checkList8.forEach(function(i) {
+        
+                if (i.checked == 1){
+                    checkedCounter4++;
+                };
+        
+                itemsLeft.textContent = checkList8.length - checkedCounter4; 
+                        
+                });
+                checkedCounter4 = 0;
+
+           
+          
+
+
+
+
+
+        });
+
+
+
+
+
 
        activeButton.addEventListener("click", event => {
         
