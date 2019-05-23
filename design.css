@@ -16,7 +16,9 @@ h1 {
     color: rosybrown;
 }
 ul {
-    list-style-type:none;
+    /* list-style-type:none; */
+    padding-inline-start: 0px;
+    margin-block-end: 0em;
 }
 li, label {
     border-bottom: 1px black;
@@ -48,7 +50,7 @@ a {
 #section {
     display: flex;
     justify-content: space-between;
-    
+    align-items: flex-start;
     /* padding: 10px 15px solid; */
     height: 20px;
     align-content: center;
@@ -63,9 +65,8 @@ li {
     justify-content: space-between;
     align-items: center;
     padding: 15px;
-    border: 2px solid red;
-    flex: 1,5,  1;
-    
+    border: 1px solid gray;
+   /*  flex: 1,5,  1; */
 }
 
 #input  {
