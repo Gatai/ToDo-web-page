@@ -60,7 +60,12 @@ button {
 
 li {
     display: flex;
-    justify-content: space-between
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border: 2px solid red;
+    flex: 1,5,  1;
+    
 }
 
 #input  {
@@ -79,5 +84,16 @@ li {
 }
 
 .delbutton {
-color: red
+color: #cc9a9a;
+background: url(cross.svg);
+}
+
+
+.divCheckBox {
+    background: url(checkbox-unchecked.svg);
+    background-size: contain;
+}
+.checkBox {
+    visibility: hidden;
+    
 }

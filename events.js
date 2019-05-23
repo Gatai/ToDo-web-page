@@ -1,5 +1,6 @@
+
 const form1 = document.getElementById("form1");
-const rows =document.getElementById("rows");
+const rows = document.getElementById("rows");
 let itemsLeft = document.querySelector("#itemsLeft");
 let resetButton = document.querySelector("#reset");
 let activeButton = document.querySelector("#activeButton");
@@ -15,234 +16,272 @@ let checkedCounter2 = 0;
 let checkedCounter3 = 0;
 let checkedCounter4 = 0;
 
+let status = "all";
+
+// ENTER BUTTON EVENT
 form1.addEventListener("keyup", function (e) {
 
-    if (e.keyCode == 13) {
+    if (e.keyCode == 13 && form1.value !== "") {
         idCounter++;
 
         const task = document.createElement("li");
         task.id = idCounter;
 
+        const divCheck = document.createElement("div");
+        divCheck.classList.add("divCheckBox");
         const check = document.createElement("input");
+        divCheck.appendChild(check);
+
         check.id = idCounter;
+       // check.style.backgroundImage = "url('circle-down.svg')";
 
         const text = document.createElement("label");
-        const del  = document.createElement("button");
+        const del = document.createElement("button");
         del.id = idCounter;
         del.classList.add("delbutton");
         //const imageDelButton = document.createElement("img");
         //imageDelButton.src = "cross.svg";
         //del.appendChild(imageDelButton);
-
-        text.textContent = form1.value;
         
+       // if (form1.value !== ""){
+       // text.textContent = form1.value;
+       // }
+
+
         check.type = "checkbox";
         check.classList.add("checkBox");
-       
+
         text.textContent = form1.value;
-       
+
         rows.appendChild(task);
-        task.appendChild(check);
+        //task.appendChild(check);
+        task.appendChild(divCheck);
         task.appendChild(text);
         task.appendChild(del);
 
-        del.textContent ="X";
+        del.textContent = "X";
 
-        del.addEventListener("click", event =>
-        {
+
+        // DEL BUTTON CLICK EVENT
+        del.addEventListener("click", event => {
             task.remove();
             numremoved++;
-            
+
             let checkList3 = Array.from(document.querySelectorAll(".checkBox"));
-            
-            if (checkList3.length == 0){
-                itemsLeft.textContent  = 0;
+
+            if (checkList3.length == 0) {
+                itemsLeft.textContent = 0;
             }
 
-            checkList3.forEach(function(i) {
-                if (i.checked == 1){
+            checkList3.forEach(function (i) {
+                if (i.checked == 1) {
                     checkedCounter3++;
-                }; 
-                itemsLeft.textContent = checkList3.length  - checkedCounter3; 
-           
+                };
+                itemsLeft.textContent = checkList3.length - checkedCounter3;
+
             });
-            
-            checkedCounter3 =0;   
+
+            checkedCounter3 = 0;
         });
 
+
+        // ********************************
         let checkList = Array.from(document.querySelectorAll(".checkBox"));
 
-        checkList.forEach(function(i) {
-                if (i.checked == 1){
-                            checkedCounter ++;
-                    };
+        checkList.forEach(function (i) {
+            if (i.checked == 1) {
+                checkedCounter++;
+            };
 
-                 itemsLeft.textContent = checkList.length - checkedCounter;
+            itemsLeft.textContent = checkList.length - checkedCounter;
         });
-                //kan kanske ta bort men har testat och det gör ingen skillnad i programmet.
-              checkedCounter = 0; 
-        
-        check.addEventListener("click", event => 
-        {
-            let checkList2 = Array.from(document.querySelectorAll(".checkBox"));
-            
-            checkList2.forEach(function(i) {
-       
-                if (i.checked == 1){
-                  checkedCounter2++;
-                 };
-       
-                itemsLeft.textContent = checkList2.length - checkedCounter2; 
-            });
-                                
-            checkedCounter2 =0; 
+        //kan kanske ta bort men har testat och det gör ingen skillnad i programmet.
+        checkedCounter = 0;
 
-                    /* skapar en klass som heter completed till alla li element som har CheckBoxes som är checked */
+
+
+        // CHECK CLICK EVENT
+        check.addEventListener("click", event => {
+            let checkList2 = Array.from(document.querySelectorAll(".checkBox"));
+
+            checkList2.forEach(function (i) {
+
+                if (i.checked == 1) {
+                    checkedCounter2++;
+                };
+
+                itemsLeft.textContent = checkList2.length - checkedCounter2;
+            });
+
+            checkedCounter2 = 0;
+
+            /* skapar en klass som heter completed till alla li element som har CheckBoxes som är checked */
             let allTasks = Array.from(document.querySelectorAll("li"));
             let allCheckBoxes = Array.from(document.querySelectorAll(".checkBox"));
-            allTasks.forEach(function(a) {
-                allCheckBoxes.forEach(function(i){
-                    if (i.checked == 1 && (a.id == i.id)){
+            allTasks.forEach(function (a) {
+                allCheckBoxes.forEach(function (i) {
+                    if (i.checked == 1 && (a.id == i.id)) {
                         a.classList.add("comleted");
                     }
                 })
             });
-         });
-         
 
-
-
-
-
-
-       let n = 2;
-       resetButton.addEventListener("click", event => {
-       let checkList4 = Array.from(document.querySelectorAll(".checkBox"));
-       //let allTasks = Array.from(document.querySelectorAll("li"));
-        
-            checkList4.forEach(function(i) {
-                if(n%2==0) {
-                    i.checked = 1;
-                //  itemsLeft.textContent = 0;
-                     
-                    
-                }
-                else {
-                    i.checked = 0;
-                   
-                }
-            });
-            n++;
-
-           
-
-            /* check.addEventListener("click", event =>{
-                
-            
-            }); */
-            
-            
-            let checkList8 = Array.from(document.querySelectorAll(".checkBox"));            
-            checkList8.forEach(function(i) {
-        
-                if (i.checked == 1){
-                    checkedCounter4++;
-                };
-        
-                itemsLeft.textContent = checkList8.length - checkedCounter4; 
-                        
-                });
-                checkedCounter4 = 0;
-
-           
-          
-
-
-
-
-
+            display();
         });
+       form1.value = "";
+       display();
+    }
 
-
-
-
-
-
-       activeButton.addEventListener("click", event => {
-        
-        let liList = Array.from(document.querySelectorAll("li"));
-                  
-            liList.forEach(function(a)
-            {
-                if(a.className =="comleted") {
-                     a.style.display = "none";
-                }
-                else 
-                {
-                    a.style.display ="";
-                }
-           
-
-            });
-
-            
-        });
-
-        completedButton.addEventListener("click", event =>{
-            let liList = Array.from(document.querySelectorAll("li"));
-                  
-            liList.forEach(function(a)
-            {
-                if(a.className !="comleted") {
-                     a.style.display = "none";
-                }
-                else
-                {
-                    a.style.display ="";
-                }
-
-            });
-
-
-        });
-
-             allButton.addEventListener("click", event => {
-               
-                 let liList = Array.from(document.querySelectorAll("li"));
-                  
-                    liList.forEach(function(a)
-                    {
-                    a.style.display = "";
-
-                    });
-            });
-
-
-     clearComleted.addEventListener("click", event =>{
-
-        let checkList7 = Array.from(document.querySelectorAll(".checkBox"));
-             let liList = Array.from(document.querySelectorAll("li"));
-                 checkList7.forEach(function(i) {
-                     if (i.checked == 1){
-                         liList.forEach(function(a)
-                         {
-                         if (a.id == i.id){
-                             a.remove();
-                         }
-                         })
-                     };
-                 });
-    })
-
-
-
-
-     }
 });
 
 
-    
-    
 
 
- 
+
+ // RESET BUTTON CLICK EVENT
+ let n = 2;
+ resetButton.addEventListener("click", event => {
+     let checkList4 = Array.from(document.querySelectorAll(".checkBox"));
+     //let allTasks = Array.from(document.querySelectorAll("li"));
+
+     checkList4.forEach(function (i) {
+         if (n % 2 == 0) {
+             i.checked = 1;
+             //  itemsLeft.textContent = 0;
+
+
+         }
+         else {
+             i.checked = 0;
+
+         }
+     });
+     n++;
+
+
+     let checkList8 = Array.from(document.querySelectorAll(".checkBox"));
+     checkList8.forEach(function (i) {
+
+         if (i.checked == 1) {
+             checkedCounter4++;
+         };
+
+         itemsLeft.textContent = checkList8.length - checkedCounter4;
+
+     });
+     checkedCounter4 = 0;
+
+     display();
+ });
+
+
+
+ // ACTIVE BUTTON CLICK EVENT
+
+ activeButton.addEventListener("click", event => {
+
+     
+     status = "active";
+     display();
+
+ });
+
+
+ //COMLETED BUTTON CLICK EVENT FUNKAR
+ completedButton.addEventListener("click", event => {
+
+     
+
+     status = "completed";
+     display();
+
+    
+
+ });
+
+ //ALL BUTTON CLICK EVENT
+
+ allButton.addEventListener("click", event => {
+
+     status = "all";
+     display();
+
+
+ });
+
+ // CLEAR COMPLETED BUTTON CLICK EVENT
+ clearComleted.addEventListener("click", event => {
+
+     let checkList7 = Array.from(document.querySelectorAll(".checkBox"));
+     let liList = Array.from(document.querySelectorAll("li"));
+     checkList7.forEach(function (i) {
+         if (i.checked == 1) {
+             liList.forEach(function (a) {
+                 if (a.id == i.id) {
+                     a.remove();
+                 }
+             })
+         };
+     });
+ })
+
+function display() {
+    let checkList7 = Array.from(document.querySelectorAll(".checkBox"));
+    let liList = Array.from(document.querySelectorAll("li"));
+
+    if (status === "all") {
+       
+        liList.forEach(function (a) {
+            a.style.display = "";
+
+        });
+    }
+    else if (status === "active") {
+        //FIRST STEG GJORA ALLA LI-AR VISIBLE
+        liList.forEach(function (a) {
+            a.style.display = "";
+
+        });
+
+        // ANDRA STEG GJORA BARA LI-AR SOM HAR CHECKBOXAR CHECKED UNVISIBLE
+
+        checkList7.forEach(function (i) {
+            if (i.checked == 1) {
+                liList.forEach(function (a) {
+                    if (a.id == i.id) {
+                        a.style.display = "none";
+                    }
+
+                })
+            }
+        });
+    }
+
+    else if(status === "completed"){
+        //FIRST STEG GJORA ALLA LI-AR UNVISIBLE 
+        liList.forEach(function (a) {
+            a.style.display = "none";
+        });
+
+        // ANDRA STEG GJORA BARA LI-AR SOM HAR CHECKBOXARNA CHECKED VISIBLE
+        checkList7.forEach(function (i) {
+            if (i.checked == 1) {
+                liList.forEach(function (a) {
+                    if (a.id == i.id) {
+                        a.style.display = "";
+                    }
+
+
+                })
+            };
+        });
+    }
+    
+
+}
+
+
+
+
+
+
