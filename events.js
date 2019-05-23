@@ -60,8 +60,7 @@ form1.addEventListener("keyup", function (e) {
         task.appendChild(del);
 
         del.textContent = "X";
-
-
+       
         // DEL BUTTON CLICK EVENT
         del.addEventListener("click", event => {
             task.remove();
@@ -133,10 +132,6 @@ form1.addEventListener("keyup", function (e) {
     }
 
 });
-
-
-
-
 
  // RESET BUTTON CLICK EVENT
  let n = 2;

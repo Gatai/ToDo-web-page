@@ -25,6 +25,10 @@ li, label {
     border-bottom: 1px black;
     font-size: 24px;
 }
+
+li:hover{
+    background-color: red;
+}
 #list {
     background-color: #ffffff;
     list-style-type:none;
@@ -85,7 +89,7 @@ li {
     height: 25px;
 }
 
-.delbutton {
+.delbutton:hover {
 color: #cc9a9a;
 background: url(cross.svg);
 }
