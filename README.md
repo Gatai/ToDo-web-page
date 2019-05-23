@@ -14,6 +14,7 @@ x = klar
     [x]eller alla färdiga föremål ("Completed").
     [x] Markera alla föremål som färdiga/ofärdiga.
     [x] itemsleft noll ställs inte när man klickar på reset knappen vid input.
+    [x] Fixat så att knapparna inte har någon border. och att när man klickar så ser man en border runt knappen.
 
 
     [ ] Testa alla funtioner
