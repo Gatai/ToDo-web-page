@@ -27,40 +27,36 @@ form1.addEventListener("keyup", function (e) {
         const task = document.createElement("li");
         task.id = idCounter;
 
-        const divCheck = document.createElement("div");
-        divCheck.classList.add("divCheckBox");
-        const check = document.createElement("input");
-        divCheck.appendChild(check);
+        const checkBoxLabel = document.createElement("label");
+        checkBoxLabel.classList.add("myCheckbox");
 
+        const check = document.createElement("input");
+        check.type = "checkbox";
         check.id = idCounter;
-       // check.style.backgroundImage = "url('circle-down.svg')";
+        check.classList.add("checkBox");
+        const checkBoxSpan = document.createElement("span");
+
+        checkBoxLabel.appendChild(check);
+        checkBoxLabel.appendChild(checkBoxSpan);
+
 
         const text = document.createElement("label");
         const del = document.createElement("button");
         del.id = idCounter;
         del.classList.add("delbutton");
-        //const imageDelButton = document.createElement("img");
-        //imageDelButton.src = "cross.svg";
-        //del.appendChild(imageDelButton);
         
-       // if (form1.value !== ""){
-       // text.textContent = form1.value;
-       // }
-
-
-        check.type = "checkbox";
-        check.classList.add("checkBox");
+        
 
         text.textContent = form1.value;
 
         rows.appendChild(task);
-        //task.appendChild(check);
-        task.appendChild(divCheck);
+        task.appendChild(checkBoxLabel);
         task.appendChild(text);
         task.appendChild(del);
 
-        del.textContent = "X";
-       
+        del.textContent = "";
+
+
         // DEL BUTTON CLICK EVENT
         del.addEventListener("click", event => {
             task.remove();
@@ -132,6 +128,10 @@ form1.addEventListener("keyup", function (e) {
     }
 
 });
+
+
+
+
 
  // RESET BUTTON CLICK EVENT
  let n = 2;
