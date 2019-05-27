@@ -116,7 +116,7 @@ form1.addEventListener("keyup", function (e) {
             checkedCounter2 = 0;
 
             /* skapar en klass som heter completed till alla li element som har CheckBoxes som är checked */
-            let allTasks = Array.from(document.querySelectorAll("li"));
+           /*  let allTasks = Array.from(document.querySelectorAll("li"));
             let allCheckBoxes = Array.from(document.querySelectorAll(".checkBox"));
             allTasks.forEach(function (a) {
                 allCheckBoxes.forEach(function (i) {
@@ -124,7 +124,7 @@ form1.addEventListener("keyup", function (e) {
                         a.classList.add("comleted");
                     }
                 })
-            });
+            }); */
 
             display();
         });

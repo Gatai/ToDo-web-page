@@ -1,7 +1,7 @@
- /*  *{
-    outline: 1px solid red;
+   /*  *{
+    
     border: 1px solid red;
-}   */
+}     */
 
 body{
     
@@ -11,6 +11,8 @@ body{
     flex-direction: column;
     background-color: #f5f5f5;
     /* line-height: 1.5px; */
+  /*   margin: 0px auto; */
+    
 }
 h1 {
     font: 14px 'Helvetica Neue', sans-serif;  
@@ -19,6 +21,8 @@ h1 {
     color: #ead7d7;
   /*  font-family: "Helvetica Neue " sans-serif; */
     /* font-family: serif;  */
+    margin: 0px auto;
+    
     
 }
 ul {
@@ -27,13 +31,9 @@ ul {
   
 
 }
-li, label {
-   
-    font-size: 24px;
-}
-li {
-    border-bottom: 1px solid #bfbfbf;  
-}
+
+
+
 #list {
     background-color: #ffffff;
     list-style-type:none;
@@ -43,14 +43,10 @@ li {
 #form1 {
     display: flex;
     border: none;
-     padding: 16px 16px 16px 10px; 
+     padding: 5px 5px 5px 5px; 
     
     justify-content: space-between;
     
-    
-    
-    
-
 }
 .footer {
     color: #bfbfbf;
@@ -81,14 +77,6 @@ button {
     background: none;
 }
 
-li {
-    display: flex;
-     justify-content: space-between; 
-    align-items: center;
-    padding: 15px;
-    
-    
-}
 
 #input  {
     display: flex;
@@ -117,6 +105,10 @@ li {
     background:url("cross.svg");
     background-size: contain;
     color: #cc9a9a;
+     flex-wrap: wrap;
+    background-repeat: no-repeat;
+    
+    
     
 
 }
@@ -146,9 +138,12 @@ li {
 .myCheckbox span {
     width: 20px;
     height: 20px;
-    display: block;
+    display: flex;
+    flex-direction: row;
     background: url("checkbox-unchecked.svg");
     background-size: contain; 
+    background-repeat: no-repeat;
+    display: block;
 
   
 }
@@ -156,6 +151,9 @@ li {
 .myCheckbox input:checked + span {
     background: url("checkbox-checked\ \(1\).svg");
     background-size: contain; 
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
 
   
 }
@@ -168,16 +166,30 @@ li {
 
 .myCheckbox {
     display: flex;
-     justify-content: space-between; 
-    align-items: center;
    /*  padding: 15px; */
-    
+   flex-wrap:wrap;
+   align-items: center;
+   justify-content: space-between; 
+   
 }
+
+li, label {
+   
+    font-size: 24px;
+}
+li {
+    display: flex;
+    flex-basis: row;
+    align-items: center;
+    justify-content: space-between; 
+    border-bottom: 1px solid #bfbfbf;  
+    padding: 5px;
+   /*   flex-wrap: wrap; */
+}
+
 .myCheckbox > label {
     margin: 15px;
 }
-
-
 #inputAndList {
     display: flex;
     width: 550 px;
@@ -194,8 +206,6 @@ li {
 }
 .taskText {
 overflow-wrap: break-word;
-
-
 }
 
 label {
