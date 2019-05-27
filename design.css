@@ -5,6 +5,7 @@
 
 body{
     
+    
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -12,12 +13,13 @@ body{
     line-height: 1.5px;
 }
 h1 {
+    font: 14px 'Helvetica Neue', sans-serif;  
     text-align: center;
     font-size: 100px;
     color: #ead7d7;
-    /* font-family: "Helvetica" serif; */
-    font-family: serif;
-   
+  /*  font-family: "Helvetica Neue " sans-serif; */
+    /* font-family: serif;  */
+    
 }
 ul {
     padding-inline-start: 0px;
@@ -41,7 +43,7 @@ li {
 #form1 {
     display: flex;
     border: none;
-     padding: 16px 235px 16px 60px; 
+     padding: 16px 16px 16px 10px; 
     
     justify-content: space-between;
     
@@ -96,9 +98,10 @@ li {
 }
 
 #reset {
-    width: 100px;
+    width: 50px;
     height: 50px;
     background: white;
+
 }
 
 #reset svg {
@@ -177,7 +180,8 @@ li {
 
 #inputAndList {
     display: flex;
-  
+    width: 550 px;
+    /* max-width: 100%; */
     flex-direction: column;
     
     
@@ -188,6 +192,12 @@ li {
        -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
             box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
+.taskText {
+overflow-wrap: break-word;
+
+
+}
+
 label {
     word-break: break-all;
     background-position: left;
