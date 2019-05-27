@@ -1,6 +1,7 @@
-/* *{
+ /*  *{
+    outline: 1px solid red;
     border: 1px solid red;
-} */
+}   */
 
 body{
     
@@ -14,6 +15,8 @@ h1 {
     text-align: center;
     font-size: 100px;
     color: #ead7d7;
+    /* font-family: "Helvetica" serif; */
+    font-family: serif;
    
 }
 ul {
@@ -32,13 +35,18 @@ li {
 #list {
     background-color: #ffffff;
     list-style-type:none;
+    margin-top: 0px;
+    
 }
 #form1 {
     display: flex;
     border: none;
-    padding: 16px 235px 16px 60px;
+     padding: 16px 235px 16px 60px; 
     
     justify-content: space-between;
+    
+    
+    
     
 
 }
@@ -64,6 +72,7 @@ a {
     align-content: center;
      background-color: #ffffff;
     padding: 10px;
+   
 }
 button {
     border: none;
@@ -83,12 +92,13 @@ li {
     display: flex;
     flex-direction: row;
     border-bottom: 1px solid #bfbfbf;  
+    
 }
 
 #reset {
     width: 100px;
     height: 50px;
-    background: white
+    background: white;
 }
 
 #reset svg {
@@ -99,21 +109,28 @@ li {
 .delbutton {
     width: 20px;
     height: 20px;
-    display: block;
-    background: url("cross.svg");
+    display: block; 
+   /* display: none; */
+    background:url("cross.svg");
     background-size: contain;
     color: #cc9a9a;
+    
 
 }
-
+/* .delbutton:hover {
+    color: #cc9a9a;
+    background: url("cross.svg");
+    } */
 
 .checkBox {
   
    display: none;
+  
     
 }
 #form1 {
     word-wrap: break-word;
+  
 } 
 
 
@@ -140,15 +157,54 @@ li {
   
 }
 
+.myCheckbox input:checked ~ label {
+    text-decoration: line-through;
+    color: #bfbfbf;
+ 
+}
+
+.myCheckbox {
+    display: flex;
+     justify-content: space-between; 
+    align-items: center;
+   /*  padding: 15px; */
+    
+}
+.myCheckbox > label {
+    margin: 15px;
+}
+
+
 #inputAndList {
     display: flex;
   
     flex-direction: column;
     
     
-    border: 1px solid gray;  
+    border: 1px solid rgba(128, 126, 126, 0.671);  
+
+    position:relative;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
 label {
     word-break: break-all;
     background-position: left;
+    font-size: 18px;
+    font-family: "Helvetica";
 }
+
+
+ /* .taskText {
+    max-width: 100px; 
+    overflow-wrap: break-word;
+     overflow-wrap: break-word; */
+   
+
+
+  /* li:hover ~ button{
+    
+   
+    display: block;
+} */

@@ -18,12 +18,15 @@ let checkedCounter4 = 0;
 
 let status = "all";
 
+
+
 // ENTER BUTTON EVENT
 form1.addEventListener("keyup", function (e) {
 
     if (e.keyCode == 13 && form1.value !== "") {
         idCounter++;
-
+        
+        
         const task = document.createElement("li");
         task.id = idCounter;
 
@@ -41,6 +44,7 @@ form1.addEventListener("keyup", function (e) {
 
 
         const text = document.createElement("label");
+        text.classList.add("taskText");
         const del = document.createElement("button");
         del.id = idCounter;
         del.classList.add("delbutton");
@@ -51,7 +55,8 @@ form1.addEventListener("keyup", function (e) {
 
         rows.appendChild(task);
         task.appendChild(checkBoxLabel);
-        task.appendChild(text);
+        //task.appendChild(text);
+        checkBoxLabel.appendChild(text);
         task.appendChild(del);
 
         del.textContent = "";
