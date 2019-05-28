@@ -20,7 +20,7 @@ let status = "all";
 // ENTER BUTTON EVENT
 form1.addEventListener("keyup", function (e) {
 
-    if (e.keyCode == 13 && form1.value !== "") {
+    if (e.keyCode == 13 && form1.value.replace(/\s+/g, '').length != 0) {
         idCounter++;
         
         
@@ -51,7 +51,7 @@ form1.addEventListener("keyup", function (e) {
 
         rows.appendChild(task);
         task.appendChild(checkBoxLabel);
-        //task.appendChild(text);
+        
         checkBoxLabel.appendChild(text);
         task.appendChild(del);
 
@@ -79,9 +79,7 @@ form1.addEventListener("keyup", function (e) {
 
             checkedCounter3 = 0;
         });
-
-
-        // ********************************
+        
         let checkList = Array.from(document.querySelectorAll(".checkBox"));
 
         checkList.forEach(function (i) {
@@ -91,10 +89,8 @@ form1.addEventListener("keyup", function (e) {
 
             itemsLeft.textContent = checkList.length - checkedCounter;
         });
-        //kan kanske ta bort men har testat och det gör ingen skillnad i programmet.
+      
         checkedCounter = 0;
-
-
 
         // CHECK CLICK EVENT
         check.addEventListener("click", event => {
@@ -111,17 +107,6 @@ form1.addEventListener("keyup", function (e) {
 
             checkedCounter2 = 0;
 
-            /* skapar en klass som heter completed till alla li element som har CheckBoxes som är checked */
-           /*  let allTasks = Array.from(document.querySelectorAll("li"));
-            let allCheckBoxes = Array.from(document.querySelectorAll(".checkBox"));
-            allTasks.forEach(function (a) {
-                allCheckBoxes.forEach(function (i) {
-                    if (i.checked == 1 && (a.id == i.id)) {
-                        a.classList.add("comleted");
-                    }
-                })
-            }); */
-
             display();
         });
        form1.value = "";
@@ -130,22 +115,16 @@ form1.addEventListener("keyup", function (e) {
 
 });
 
-
-
-
-
  // RESET BUTTON CLICK EVENT
  let n = 2;
  resetButton.addEventListener("click", event => {
      let checkList4 = Array.from(document.querySelectorAll(".checkBox"));
-     //let allTasks = Array.from(document.querySelectorAll("li"));
+     
 
      checkList4.forEach(function (i) {
          if (n % 2 == 0) {
              i.checked = 1;
-             //  itemsLeft.textContent = 0;
-
-
+             
          }
          else {
              i.checked = 0;
@@ -170,13 +149,10 @@ form1.addEventListener("keyup", function (e) {
      display();
  });
 
-
-
  // ACTIVE BUTTON CLICK EVENT
 
  activeButton.addEventListener("click", event => {
 
-     
      status = "active";
      display();
 
@@ -186,12 +162,8 @@ form1.addEventListener("keyup", function (e) {
  //COMLETED BUTTON CLICK EVENT FUNKAR
  completedButton.addEventListener("click", event => {
 
-     
-
      status = "completed";
      display();
-
-    
 
  });
 
@@ -201,7 +173,6 @@ form1.addEventListener("keyup", function (e) {
 
      status = "all";
      display();
-
 
  });
 
@@ -272,7 +243,6 @@ function display() {
         });
     }
     
-
 }
 
 
