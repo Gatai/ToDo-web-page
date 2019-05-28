@@ -3,6 +3,8 @@
     border: 1px solid red;
 }     */
 
+
+
 body{
     
     
@@ -242,3 +244,11 @@ label {
 #main, #section, #input, #list, #form1 {
     max-width: 550px;
 }
+
+ /* @media (max-width: 370px) {
+    
+    *{
+    
+        border: 1px solid red;
+    }
+}  */
