@@ -1,57 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet"  href="Design.css">
+    <link rel="stylesheet" href="Design.css">
     <script src="events.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDoMVC</title>
 </head>
-<body> 
-    <section id="main" >
-        
+
+<body>
+    <section id="main">
+
         <div id="title">
-                <h1>todos</h1>
-        </div> 
-        
+            <h1>todos</h1>
+        </div>
+
         <div id="inputAndList">
-               
-        <div id="input"> 
-                <button id = "reset">
+
+            <div id="input">
+                <button id="reset">
                     <svg id="reset-icon" >
                         <path d="M9.914 11.086l-2.829 2.829 8.914 8.914 8.914-8.914-2.828-2.828-6.086 6.086z"></path>
                         </svg>
-                </button>  
-    
-                <input type="text" id="form1" placeholder="What need to be done?" autocomplete="off" size="70">
+                </button>
+
+                <input type="text" id="form1" placeholder="What need to be done?" autocomplete="off">
             </div>
-       
-        
-        <div id="list">
-            <ul id="rows">   
-                   
-            </ul>
+
+
+            <div id="list">
+                <ul id="rows">
+
+                </ul>
+            </div>
+
+            <section id="section">
+                <button id="itemsLeftButton" disabled><span id="itemsLeft"></span> items left</button>
+                <div id="toggle">
+                    <button id="allButton">All</button>
+                    <button id="activeButton">Active</button>
+                    <button id="completedButton">Completed</button>
+                </div>
+
+                <button id="clearButton"> Clear completed</button>
+            </section>
         </div>
-
-        <section id="section"> 
-            <button id="itemsLeftButton" disabled><span id="itemsLeft"></span> items left</button>           
-                <div>
-                   <button id="allButton">All</button>
-                   <button id="activeButton">Active</button>
-                   <button id="completedButton">Completed</button>
-               </div>
-
-                <button id="clearButton" > Clear completed</button>
-        </section>
-    </div>
     </section>
 
-    <footer class = "footer">
-            
-            <p><small> Written by Phatchari Jansson & Novak Bubanja</small></p>
-            <!-- När man klickar på denna så kommer man direkt till mail och så kan man skicka ett mail till den personen -->
-            <p><small> <a href="mailto:gataij@hotmail.com"> Contact Phatchari Jansson</a></small></p>
+    <footer class="footer">
+
+        <p><small> Written by Phatchari Jansson & Novak Bubanja</small></p>
+        <!-- När man klickar på denna så kommer man direkt till mail och så kan man skicka ett mail till den personen -->
+        <p><small> <a href="mailto:gataij@hotmail.com"> Contact Phatchari Jansson</a></small></p>
     </footer>
-    
+
 </body>
+
 </html>
