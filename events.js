@@ -1,4 +1,3 @@
-
 const form1 = document.getElementById("form1");
 const rows = document.getElementById("rows");
 let itemsLeft = document.querySelector("#itemsLeft");
@@ -17,8 +16,6 @@ let checkedCounter3 = 0;
 let checkedCounter4 = 0;
 
 let status = "all";
-
-
 
 // ENTER BUTTON EVENT
 form1.addEventListener("keyup", function (e) {
@@ -49,8 +46,6 @@ form1.addEventListener("keyup", function (e) {
         const del = document.createElement("button");
         del.id = idCounter;
         del.classList.add("delbutton");
-        
-        
 
         text.textContent = form1.value;
 
@@ -245,7 +240,6 @@ function display() {
         });
 
         // ANDRA STEG GJORA BARA LI-AR SOM HAR CHECKBOXAR CHECKED UNVISIBLE
-
         checkList7.forEach(function (i) {
             if (i.checked == 1) {
                 liList.forEach(function (a) {
