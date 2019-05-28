@@ -234,9 +234,7 @@ label {
         display: flex;
         flex-direction: column;
     }
-    * {
-        /*  outline: 1px solid red; */
-    }
+    
     #toggle {
         display: flex;
         flex-direction: column;
