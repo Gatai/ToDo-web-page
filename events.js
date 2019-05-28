@@ -38,6 +38,7 @@ form1.addEventListener("keyup", function (e) {
         check.id = idCounter;
         check.classList.add("checkBox");
         const checkBoxSpan = document.createElement("span");
+        checkBoxSpan.classList.add("checkSpan");
 
         checkBoxLabel.appendChild(check);
         checkBoxLabel.appendChild(checkBoxSpan);

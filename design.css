@@ -107,6 +107,7 @@ button {
     color: #cc9a9a;
      flex-wrap: wrap;
     background-repeat: no-repeat;
+    flex: 1;
     
     
     
@@ -120,8 +121,10 @@ button {
 .checkBox {
   
    display: none;
-  
-    
+   flex: 1;
+}
+.checkSpan {
+    flex: 2;
 }
 #form1 {
     word-wrap: break-word;
@@ -152,8 +155,9 @@ button {
     background: url("checkbox-checked\ \(1\).svg");
     background-size: contain; 
     background-repeat: no-repeat;
-    background-size: contain;
+    
     display: block;
+    
 
   
 }
@@ -167,9 +171,10 @@ button {
 .myCheckbox {
     display: flex;
    /*  padding: 15px; */
-   flex-wrap:wrap;
+  /*  flex-wrap:wrap; */
    align-items: center;
    justify-content: space-between; 
+   flex: 16;
    
 }
 
@@ -206,6 +211,7 @@ li {
 }
 .taskText {
 overflow-wrap: break-word;
+flex: 32;
 }
 
 label {
