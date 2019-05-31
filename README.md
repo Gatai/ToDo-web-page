@@ -15,11 +15,9 @@ x = klar
     [x] Markera alla föremål som färdiga/ofärdiga.
     [x] itemsleft noll ställs inte när man klickar på reset knappen vid input.
     [x] Fixat så att knapparna inte har någon border. och att när man klickar så ser man en border runt knappen.
-
-
-    [ ] Testa alla funtioner
-    [ ] Utseende som exampel, css, GUI beteende, ikoner, effekter
-    [ ] Responsive
+    [x] Testa alla funtioner
+    [x] Utseende som exampel, css, GUI beteende, ikoner, effekter
+    [x] Responsive
 
 Den nedan gör så att användarens input försvinner. och att man kan skriva något annat därefter.
     ******************************
