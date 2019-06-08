@@ -1,3 +1,5 @@
+
+//definitions of main object model
 const form1 = document.getElementById("form1");
 const rows = document.getElementById("rows");
 let itemsLeft = document.querySelector("#itemsLeft");
@@ -7,14 +9,13 @@ let completedButton = document.querySelector("#completedButton");
 let allButton = document.querySelector("#allButton");
 let clearComleted = document.querySelector("#clearButton");
 
+// id counter for to have same ID to all task elements
 let idCounter = -1;
-let checkcounter = 0;
-let numremoved = 0;
-let checkedCounter = 0;
-let checkedCounter2 = 0;
-let checkedCounter3 = 0;
-let checkedCounter4 = 0;
 
+// counter which is counting how many tasks is checked
+let checkedCounter = 0;
+
+//status is variable which is changing dependig on which button is clicked (all,active or comleted)
 let status = "all";
 
 // ENTER BUTTON EVENT
@@ -23,7 +24,7 @@ form1.addEventListener("keyup", function (e) {
     if (e.keyCode == 13 && form1.value.replace(/\s+/g, '').length != 0) {
         idCounter++;
         
-        
+        //definitions of object model
         const task = document.createElement("li");
         task.id = idCounter;
 
@@ -40,12 +41,11 @@ form1.addEventListener("keyup", function (e) {
         checkBoxLabel.appendChild(check);
         checkBoxLabel.appendChild(checkBoxSpan);
 
-
         const text = document.createElement("label");
         text.classList.add("taskText");
-        const del = document.createElement("button");
-        del.id = idCounter;
-        del.classList.add("delbutton");
+        const delButton = document.createElement("button");
+        delButton.id = idCounter;
+        delButton.classList.add("delbutton");
 
         text.textContent = form1.value;
 
@@ -53,132 +53,75 @@ form1.addEventListener("keyup", function (e) {
         task.appendChild(checkBoxLabel);
         
         checkBoxLabel.appendChild(text);
-        task.appendChild(del);
+        task.appendChild(delButton);
 
-        del.textContent = "";
+        delButton.textContent = "";
 
-
-        // DEL BUTTON CLICK EVENT
-        del.addEventListener("click", event => {
+ // delButton CLICK EVENT
+        delButton.addEventListener("click", event => {
             task.remove();
-            numremoved++;
-
             let checkList3 = Array.from(document.querySelectorAll(".checkBox"));
-
             if (checkList3.length == 0) {
                 itemsLeft.textContent = 0;
             }
-
-            checkList3.forEach(function (i) {
-                if (i.checked == 1) {
-                    checkedCounter3++;
-                };
-                itemsLeft.textContent = checkList3.length - checkedCounter3;
-
-            });
-
-            checkedCounter3 = 0;
+            countItemsLeftNumber();
         });
-        
-        let checkList = Array.from(document.querySelectorAll(".checkBox"));
 
-        checkList.forEach(function (i) {
-            if (i.checked == 1) {
-                checkedCounter++;
-            };
+        countItemsLeftNumber();
 
-            itemsLeft.textContent = checkList.length - checkedCounter;
-        });
-      
-        checkedCounter = 0;
-
-        // CHECK CLICK EVENT
+// CHECK CLICK EVENT
         check.addEventListener("click", event => {
-            let checkList2 = Array.from(document.querySelectorAll(".checkBox"));
-
-            checkList2.forEach(function (i) {
-
-                if (i.checked == 1) {
-                    checkedCounter2++;
-                };
-
-                itemsLeft.textContent = checkList2.length - checkedCounter2;
-            });
-
-            checkedCounter2 = 0;
-
+            countItemsLeftNumber();
             display();
         });
+
+
        form1.value = "";
        display();
     }
 
 });
 
+
  // RESET BUTTON CLICK EVENT
  let n = 2;
  resetButton.addEventListener("click", event => {
      let checkList4 = Array.from(document.querySelectorAll(".checkBox"));
      
-
      checkList4.forEach(function (i) {
          if (n % 2 == 0) {
              i.checked = 1;
-             
          }
          else {
              i.checked = 0;
-
          }
      });
      n++;
 
-
-     let checkList8 = Array.from(document.querySelectorAll(".checkBox"));
-     checkList8.forEach(function (i) {
-
-         if (i.checked == 1) {
-             checkedCounter4++;
-         };
-
-         itemsLeft.textContent = checkList8.length - checkedCounter4;
-
-     });
-     checkedCounter4 = 0;
-
+     countItemsLeftNumber();
      display();
  });
 
  // ACTIVE BUTTON CLICK EVENT
-
  activeButton.addEventListener("click", event => {
-
      status = "active";
      display();
-
  });
 
-
- //COMLETED BUTTON CLICK EVENT FUNKAR
+ //COMLETED BUTTON CLICK EVENT 
  completedButton.addEventListener("click", event => {
-
      status = "completed";
      display();
-
  });
 
  //ALL BUTTON CLICK EVENT
-
  allButton.addEventListener("click", event => {
-
      status = "all";
      display();
-
  });
 
  // CLEAR COMPLETED BUTTON CLICK EVENT
  clearComleted.addEventListener("click", event => {
-
      let checkList7 = Array.from(document.querySelectorAll(".checkBox"));
      let liList = Array.from(document.querySelectorAll("li"));
      checkList7.forEach(function (i) {
@@ -192,25 +135,38 @@ form1.addEventListener("keyup", function (e) {
      });
  })
 
+// function which checks how many tasks are left to be done (number of not-checked tasks)
+function countItemsLeftNumber() {
+    let checkList = Array.from(document.querySelectorAll(".checkBox"));
+
+        checkList.forEach(function (i) {
+            if (i.checked == 1) {
+                checkedCounter++;
+            };
+            itemsLeft.textContent = checkList.length - checkedCounter;
+        });
+
+        checkedCounter = 0;
+}
+
+// function which show or hide tasks depending on which button is clicked (all,active or comleted button)
 function display() {
     let checkList7 = Array.from(document.querySelectorAll(".checkBox"));
     let liList = Array.from(document.querySelectorAll("li"));
 
     if (status === "all") {
-       
         liList.forEach(function (a) {
             a.style.display = "";
-
         });
     }
     else if (status === "active") {
-        //FIRST STEG GJORA ALLA LI-AR VISIBLE
+        //FIRST STEP: DO ALL TASKS VISIBLE
         liList.forEach(function (a) {
             a.style.display = "";
 
         });
 
-        // ANDRA STEG GJORA BARA LI-AR SOM HAR CHECKBOXAR CHECKED UNVISIBLE
+        //SECOND STEP: DO JUST TASKS WICH ARE CHECKED NOT VISIBLE
         checkList7.forEach(function (i) {
             if (i.checked == 1) {
                 liList.forEach(function (a) {
@@ -224,12 +180,12 @@ function display() {
     }
 
     else if(status === "completed"){
-        //FIRST STEG GJORA ALLA LI-AR UNVISIBLE 
+        //FIRST STEP: DO ALL TASKS NOT VISIBLE  
         liList.forEach(function (a) {
             a.style.display = "none";
         });
 
-        // ANDRA STEG GJORA BARA LI-AR SOM HAR CHECKBOXARNA CHECKED VISIBLE
+        //SECOND STEP: DO JUST TASKS WICH ARE CHECKED VISIBLE
         checkList7.forEach(function (i) {
             if (i.checked == 1) {
                 liList.forEach(function (a) {
@@ -242,7 +198,6 @@ function display() {
             };
         });
     }
-    
 }
 
 
