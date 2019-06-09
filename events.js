@@ -1,5 +1,5 @@
 
-//definitions of main object model
+//definitions of main variables
 const form1 = document.getElementById("form1");
 const rows = document.getElementById("rows");
 let itemsLeft = document.querySelector("#itemsLeft");
@@ -24,7 +24,7 @@ form1.addEventListener("keyup", function (e) {
     if (e.keyCode == 13 && form1.value.replace(/\s+/g, '').length != 0) {
         idCounter++;
         
-        //definitions of object model
+        //definitions of variables
         const task = document.createElement("li");
         task.id = idCounter;
 
