@@ -2,7 +2,7 @@
 ToDo Mvc har vi fått göra i skolan.
 Uppgiften gick ut på att lära sig enbart renodlad HTML, CSS och JavaScript
 
-##Funktioner:
+## Funktioner:
 -Lägga till föremål.
 -Ta bort föremål.
 -Markera föremål som färdiga.
