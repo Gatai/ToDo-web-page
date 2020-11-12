@@ -16,4 +16,7 @@ Uppgiften gick ut på att lära sig enbart renodlad HTML, CSS och JavaScript.
 - Utseende som exampel, css, GUI beteende, ikoner, effekter
 - Responsivess
 - Man kan inte mata in en tom sträng eller med mellanrum.
-    
+  
+
+
+Utvecklad av Novak Bubanja och Phatchari Jansson
