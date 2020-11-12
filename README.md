@@ -18,5 +18,5 @@ Uppgiften gick ut på att lära sig enbart renodlad HTML, CSS och JavaScript.
 - Man kan inte mata in en tom sträng eller med mellanrum.
   
 
-
+Uppgift beskrivningen https://frontend.2019.plus.jakobkallin.com/project/
 ### Utvecklad av Novak Bubanja och Phatchari Jansson
